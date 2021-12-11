@@ -7,7 +7,7 @@ const classSelectorBook = "written_book{pages:['[\"\",{\"text\":\"Selecci\u00F3n
 const gameSettingsBook = "written_book{pages:['[\"\",{\"text\":\"Administraci\u00F3n de la Partida\",\"bold\":true,\"color\":\"gold\"},{\"text\":\"\\\\n\\\\n\",\"color\":\"reset\",\"bold\":true},{\"text\":\"  \\\\ud83d\\\\udde1\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\" \",\"bold\":true,\"color\":\"dark_green\"},{\"text\":\"[Iniciar]\",\"bold\":true,\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\/function escort:start\"}},{\"text\":\"\\\\n\",\"color\":\"reset\",\"bold\":true},{\"text\":\"  \\\\ud83d\\\\udd31\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\" \",\"color\":\"reset\",\"bold\":true},{\"text\":\"[Pausar]\",\"bold\":true,\"color\":\"dark_green\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\/function escort:pause\"}},{\"text\":\"\\\\n\\\\n\",\"color\":\"reset\",\"bold\":true},{\"text\":\"  \\\\ud83c\\\\udff9\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\" \",\"color\":\"reset\",\"bold\":true},{\"text\":\"[Reiniciar]\",\"bold\":true,\"color\":\"red\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\/function escort:reset\"}},{\"text\":\"\\\\n\",\"color\":\"reset\",\"bold\":true},{\"text\":\"  \\\\ud83e\\\\uddea\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\" \",\"color\":\"reset\",\"bold\":true},{\"text\":\"[Nuevo mundo]\",\"bold\":true,\"color\":\"red\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\/function escort:new_world\"}},{\"text\":\"\\\\n\\\\n\",\"color\":\"reset\",\"bold\":true},{\"text\":\"  \\\\ud83c\\\\udfa3\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\" \",\"color\":\"reset\",\"bold\":true},{\"text\":\"[Recargar]\",\"bold\":true,\"color\":\"blue\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\/reload\"}},{\"text\":\"\\\\n\\\\n\",\"color\":\"reset\",\"bold\":true},{\"text\":\"  \\\\u2697\",\"bold\":true,\"color\":\"dark_red\"},{\"text\":\" \",\"color\":\"reset\",\"bold\":true},{\"text\":\"[Retos]\",\"bold\":true,\"color\":\"dark_purple\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"\/function escort:challenges\"}},{\"text\":\"\\\\n \",\"color\":\"reset\"}]'],title:Partida,author:KernelFreeze,display:{Name:'{\"text\":\"Opciones de la Partida\",\"color\":\"gold\",\"bold\":true}'}}"
 
 MCFunction('_book', () => {
-    _.if(game.gameStarted.notEqualTo(1), () => {
+    _.if(game.gameMode.notEqualTo(1), () => {
         execute.as(Selector('@a', { nbt: { Inventory: [] } })).run(() => {
             give('@s', gameSettingsBook);
             give('@s', classSelectorBook);
@@ -29,7 +29,7 @@ function joinTeam(index: number) {
 
     effects.setMaxHealth(teams.maxHealth[index]);
 
-    _.if(game.gameStarted.notEqualTo(1), () => {
+    _.if(game.gameMode.notEqualTo(1), () => {
         clear('@s', 'minecraft:golden_apple');
         clear('@s', 'minecraft:bread');
         clear('@s', 'minecraft:splash_potion');

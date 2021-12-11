@@ -1,6 +1,6 @@
 import { execute, MCFunction, playsound, rel, tellraw, title, _ } from "sandstone";
 import { Objective } from 'sandstone'
-import * as reset from "./reset";
+import * as game from "./game";
 import * as book from "./book";
 
 const deaths = Objective.create('deaths', 'deathCount', [{ text: 'Player Deaths' }])
@@ -25,6 +25,6 @@ function announceDeath() {
     title('@a').subtitle({ "text": "Mejor suerte la próxima" })
     title('@a').title({ "text": "¡Han muerto!", "color": "red" })
 
-    reset.resetAll()
+    game.resetAll()
     book.giveBooksToAll()
 }
