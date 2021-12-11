@@ -1,0 +1,23 @@
+{
+  "name": "escort",
+  "version": "1.0.0",
+  "description": "A data pack created with Sandstone",
+  "scripts": {
+    "watch": "sand watch",
+    "build": "sand build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sandstone": "^0.13.6"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.12",
+    "sandstone-cli": "^0.5.4",
+    "typescript": "^4.5.3"
+  },
+  "engines": {
+    "node": ">=12.9.0"
+  }
+}
