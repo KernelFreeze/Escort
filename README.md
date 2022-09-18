@@ -1,20 +1,14 @@
-# Sandstone project
+# Escort
 
-To build the datapack, run:
-```ts
-npm run build
-// or
-yarn build
-// or
-sand build
-```
+Una modalidad de Minecraft implementada como datapack que consiste en diferentes "Equipos" que se deben complementar los unos a los otros con el fin de ganar el juego.
 
-To automatically rebuild the datapack on each change, run:
-```ts
-npm run watch
-// or
-yarn watch
-// or
-sand watch
-```
+## Equipos
 
+ - Escoltado
+ - Médico
+ - Escolta
+ - Tanque
+
+## Compilación
+
+Para compilar el datapack se debe usar el comando `yarn build`.
